@@ -1,20 +1,69 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+
+import {
+  FlatList,
+  Button,
+  Text,
+  StyleSheet,
+  TextInput,
+  View,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
+
+import Libro from "./components/Libro";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Libro/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 60,
+    backgroundColor: "#ccc",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    height: "83%",
+    shadowColor: "#ccc",
+  },
+
+  inputGroup: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    padding: 20,
+  },
+  productInput: {
+    width: "75%",
+    borderBottomColor: "teal",
+    borderBottomWidth: 1,
+    height: 40,
+  },
+  productButton: {
+    width: "25%",
+  },
+  listItem: {
+    height: 100,
+    width: "100%",
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "white",
+    shadowColor: "#ccc",
+    borderRadius: 5,
+  },
+  listItemText: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  listContainer: {
+    width: "100%",
   },
 });
